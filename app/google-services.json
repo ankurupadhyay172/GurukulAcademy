@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580344803823",
+    "project_id": "gurukulacademy-6e5ce",
+    "storage_bucket": "gurukulacademy-6e5ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580344803823:android:6843291fd34ba68efdc61a",
+        "android_client_info": {
+          "package_name": "com.gca.mygca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580344803823-n9kem89vffa2us6rl96ht0mrtbb2plaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcno7XCzR3v58TYu-B5GK7Zx0qC4H0sNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580344803823-n9kem89vffa2us6rl96ht0mrtbb2plaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
