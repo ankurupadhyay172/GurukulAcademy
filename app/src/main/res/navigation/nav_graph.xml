@@ -1,6 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frontScreenFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gca.mygca.ui.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_imageGalleryFragment"
+            app:destination="@id/imageGalleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transportScreenFragment"
+            app:destination="@id/transportScreenFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_studentBoardFragment"
+            app:destination="@id/studentBoardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_departureMenuFragment"
+            app:destination="@id/departureMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/earlyDepartureFormFragment"
+        android:name="com.gca.mygca.ui.EarlyDepartureFormFragment"
+        android:label="Departure Form"
+        tools:layout="@layout/fragment_early_departure_form"/>
+    <fragment
+        android:id="@+id/imageGalleryFragment"
+        android:name="com.gca.mygca.ui.ImageGalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_image_gallery">
+        <action
+            android:id="@+id/action_imageGalleryFragment_to_imageViewerFragment"
+            app:destination="@id/imageViewerFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_imageGalleryFragment_to_videoPlayerFragment"
+            app:destination="@id/videoPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewerFragment"
+        android:name="com.gca.mygca.ui.ImageViewerFragment"
+        android:label="Image Viewer"
+        tools:layout="@layout/fragment_image_viewer">
+        <argument
+            android:name="pos"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="list"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayerFragment"
+        android:name="com.gca.mygca.ui.VideoPlayerFragment"
+        android:label="Video"
+        tools:layout="@layout/fragment_video_player">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/frontScreenFragment"
+        android:name="com.gca.mygca.ui.FrontScreenFragment"
+        android:label="FrontScreenFragment"
+        tools:layout="@layout/fragment_front_screen">
+        <action
+            android:id="@+id/action_frontScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            />
+        <action
+            android:id="@+id/action_frontScreenFragment_to_transportScreenFragment"
+            app:destination="@id/transportScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transportScreenFragment"
+        android:name="com.gca.mygca.ui.TransportScreenFragment"
+        android:label="Transport"
+        tools:layout="@layout/fragment_transport_fees">
+        <action
+            android:id="@+id/action_transportScreenFragment_to_transportRoutesFragment"
+            app:destination="@id/transportRoutesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transportRoutesFragment"
+        android:name="com.gca.mygca.ui.TransportRoutesFragment"
+        android:label="Transport Routes"
+        tools:layout="@layout/fragment_transport_fees">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_transportRoutesFragment_to_transportFeesFragment"
+            app:destination="@id/transportFeesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transportFeesFragment"
+        android:name="com.gca.mygca.ui.TransportFeesFragment"
+        android:label="Transport Fees"
+        tools:layout="@layout/fragment_show_transport_fees">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="route_id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentBoardFragment"
+        android:name="com.gca.mygca.ui.StudentBoardFragment"
+        android:label="Boards"
+        tools:layout="@layout/fragment_transport_fees">
+        <action
+            android:id="@+id/action_studentBoardFragment_to_studentMediumFragment"
+            app:destination="@id/studentMediumFragment" />
+        <action
+            android:id="@+id/action_studentBoardFragment_to_studentClassesFragment"
+            app:destination="@id/studentClassesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentMediumFragment"
+        android:name="com.gca.mygca.ui.StudentMediumFragment"
+        android:label="Medium"
+        tools:layout="@layout/fragment_transport_fees">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_studentMediumFragment_to_studentClassesFragment"
+            app:destination="@id/studentClassesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFeesDetailsFragment"
+        android:name="com.gca.mygca.ui.StudentFeesDetailsFragment"
+        android:label="Fees"
+        tools:layout="@layout/fragment_fees_recipt">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="fees_benifit"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentClassesFragment"
+        android:name="com.gca.mygca.ui.StudentClassesFragment"
+        android:label="Class"
+        tools:layout="@layout/fragment_transport_fees">
+        <action
+            android:id="@+id/action_studentClassesFragment_to_studentFeesDetailsFragment"
+            app:destination="@id/studentFeesDetailsFragment" />
+        <argument android:name="board_id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="medium_id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/departureMenuFragment"
+        android:name="com.gca.mygca.ui.DepartureMenuFragment"
+        android:label="Early Departure"
+        tools:layout="@layout/departure_menu_fragment">
+        <action
+            android:id="@+id/action_departureMenuFragment_to_earlyDepartureFormFragment"
+            app:destination="@id/earlyDepartureFormFragment" />
+        <action
+            android:id="@+id/action_departureMenuFragment_to_viewDepartureHistoryFragment"
+            app:destination="@id/viewDepartureHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewDepartureHistoryFragment"
+        android:name="com.gca.mygca.ui.ViewDepartureHistoryFragment"
+        android:label="View Departure"
+        tools:layout="@layout/departure_menu_fragment"/>
 </navigation>

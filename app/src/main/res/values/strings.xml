@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">GurukulAcademy</string>
+    <string name="app_name">GCA</string>
+    <string name="fee_structure">Fee Structure</string>
+    <string name="gallery_photo">Gallery Photo</string>
+    <string name="gallery_video">Gallery Video</string>
+    <string name="easy_departure">Easy Departure</string>
+    <string name="transport_fees">Transport Fees</string>
 </resources>

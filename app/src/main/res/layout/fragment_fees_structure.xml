@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/sfpro_display_bold"
+            android:text="Student name and fees"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tandc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="9.3dp"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/sf_pro_display_medium"
+            android:letterSpacing="0.0625"
+            android:text="T \u0026 C: Charges will be applied\n0% on UPI \u0026 Rupay Debit Card \n0.9%+GST on VISA Debit Card and 1.99% + GST will be included on all other payment options"
+            android:textColor="@color/graylight1"
+            android:textSize="12sp" />
+        <!--recycler use-->
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+
+
+                <View
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="18.8dp"
+                    android:background="@color/lightgray" />
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.5dp"
+                    android:orientation="horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ImageView
+                        android:id="@+id/mytrip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/month"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="TERM I"
+                            android:textColor="@color/blue"
+                            android:textSize="11.7sp" />
+
+                        <TextView
+                            android:id="@+id/term_first_fees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.5dp"
+                            android:fontFamily="@font/sfpro_display_bold"
+                            android:text="Rs. 3000"
+                            android:textColor="@android:color/black"
+                            android:textSize="12.3sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:id="@+id/layout_pay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rect_blue"
+                            android:orientation="vertical"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="5.5dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="5.5dp">
+
+                            <TextView
+                                android:id="@+id/pay_term1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="Pay Now"
+                                android:textColor="@color/white"
+                                android:textSize="11.7sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tandcfee1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="T \u0026 C applied"
+                            android:textColor="@color/blacklight"
+                            android:textSize="11.7sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15.2dp"
+                    android:background="@color/lightgray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.5dp"
+                    android:orientation="horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="TERM II"
+                            android:textColor="@color/blue"
+                            android:textSize="11.7sp" />
+
+                        <TextView
+                            android:id="@+id/term_second_fees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.5dp"
+                            android:fontFamily="@font/sfpro_display_bold"
+                            android:text="Rs. 8000"
+                            android:textColor="@android:color/black"
+                            android:textSize="12.3sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rect_blue"
+                            android:orientation="vertical"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="5.5dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="5.5dp">
+
+                            <TextView
+                                android:id="@+id/pay_term2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="Pay Now"
+                                android:textColor="@color/white"
+                                android:textSize="11.7sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tandcfee2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="T \u0026 C applied"
+                            android:textColor="@color/blacklight"
+                            android:textSize="11.7sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15.2dp"
+                    android:background="@color/lightgray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.5dp"
+                    android:orientation="horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="TERM III"
+                            android:textColor="@color/blue"
+                            android:textSize="11.7sp" />
+
+                        <TextView
+                            android:id="@+id/term_third_fees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.5dp"
+                            android:fontFamily="@font/sfpro_display_bold"
+                            android:text="Rs. 8000"
+                            android:textColor="@android:color/black"
+                            android:textSize="12.3sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rect_blue"
+                            android:orientation="vertical"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="5.5dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="5.5dp">
+
+                            <TextView
+                                android:id="@+id/pay_term3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="Pay Now"
+                                android:textColor="@color/white"
+                                android:textSize="11.7sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tandcfee3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="T \u0026 C applied"
+                            android:textColor="@color/blacklight"
+                            android:textSize="11.7sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15.2dp"
+                    android:background="@color/lightgray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.5dp"
+                    android:orientation="horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="TERM IV"
+                            android:textColor="@color/blue"
+                            android:textSize="11.7sp" />
+
+                        <TextView
+                            android:id="@+id/term_fourth_fees"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.5dp"
+                            android:fontFamily="@font/sfpro_display_bold"
+                            android:text="Rs. 8000"
+                            android:textColor="@android:color/black"
+                            android:textSize="12.3sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rect_blue"
+                            android:orientation="vertical"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="5.5dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="5.5dp">
+
+                            <TextView
+                                android:id="@+id/pay_term4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/sf_pro_display_medium"
+                                android:text="Pay Now"
+                                android:textColor="@color/white"
+                                android:textSize="11.7sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tandcfee4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/sf_pro_display_medium"
+                            android:text="T \u0026 C applied"
+                            android:textColor="@color/blacklight"
+                            android:textSize="11.7sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <TextView
+
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rect_green"
+        android:elevation="2.5dp"
+        android:fontFamily="@font/sf_pro_display_medium"
+        android:gravity="center"
+        android:padding="12.5dp"
+        android:text="TOTAL AMOUNT "
+        android:textColor="@color/white"
+        android:textSize="12.5sp" />
+</RelativeLayout>
