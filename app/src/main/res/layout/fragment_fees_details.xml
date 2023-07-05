@@ -102,7 +102,7 @@
                             android:fontFamily="@font/sfuitext_semibold"
                             android:text="Amount paid to school"
                             android:textColor="@color/blacklight"
-                            android:textSize="12.5sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:id="@+id/total"
@@ -112,7 +112,7 @@
                             android:fontFamily="@font/sfpro_display_bold"
                             android:paddingRight="@dimen/_5sdp"
                             android:textColor="@color/blacklight"
-                            android:textSize="11.7sp" />
+                            android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -127,7 +127,7 @@
                             android:fontFamily="@font/sf_pro_display_medium"
                             android:text="Advance Fees Benifit"
                             android:textColor="@color/graydark"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:id="@+id/benifit"
@@ -137,7 +137,7 @@
                             android:fontFamily="@font/sf_pro_display_medium"
                             tools:text="₹ 1000"
                             android:textColor="@color/blue"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/_10sdp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -162,7 +162,7 @@
                             android:fontFamily="@font/sfuitext_semibold"
                             android:text="ONE TIME DEPOSIT DISCOUNTED FEE(APRIL &amp; MAY MONTH OF REN./AT THE TIME OF ADM."
                             android:textColor="@color/blacklight"
-                            android:textSize="12.5sp" />
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
                             android:id="@+id/benefitFees"
@@ -172,7 +172,7 @@
                             android:fontFamily="@font/sfpro_display_bold"
                             android:paddingRight="@dimen/_5sdp"
                             android:textColor="@color/blacklight"
-                            android:textSize="11.7sp" />
+                            android:textSize="@dimen/_12sdp" />
                     </LinearLayout>
 
                     <View
@@ -190,7 +190,7 @@
                         android:fontFamily="@font/sfpro_display_semibold"
                         android:text="Admission And Renewal Fee"
                         android:textColor="@color/black"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/_12sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -204,7 +204,7 @@
                             android:fontFamily="@font/sf_pro_display_medium"
                             android:text="New Admission : "
                             android:textColor="@color/graydark"
-                            android:textSize="12.7sp" />
+                            android:textSize="@dimen/_13sdp" />
 
                         <TextView
                             android:id="@+id/paid_name"
@@ -215,7 +215,7 @@
                             tools:text="₹ 1000"
                             android:text="₹ 1000"
                             android:textColor="@color/blue"
-                            android:textSize="12.7sp" />
+                            android:textSize="@dimen/_13sdp" />
                     </LinearLayout>
 
                     <View
@@ -237,7 +237,7 @@
                             android:fontFamily="@font/sf_pro_display_medium"
                             android:text="Old Admission : "
                             android:textColor="@color/graydark"
-                            android:textSize="12sp" />
+                            android:textSize="@dimen/_13sdp" />
 
                         <TextView
                             android:id="@+id/monthly_fees"
@@ -247,7 +247,7 @@
                             android:fontFamily="@font/sf_pro_display_medium"
                             android:text="₹ 500  "
                             android:textColor="@color/blacklight"
-                            android:textSize="12.7sp" />
+                            android:textSize="@dimen/_13sdp" />
                     </LinearLayout>
 
                     <View

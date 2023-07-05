@@ -1,10 +1,7 @@
 package com.gca.mygca.retrofit
 
-import com.gca.mygca.model.request.DepartureRequestModel
 import com.gca.mygca.model.SliderResponseModel
-import com.gca.mygca.model.request.CommonRequestModel
-import com.gca.mygca.model.request.StudentClassRequestModel
-import com.gca.mygca.model.request.TransportFeesRequestModel
+import com.gca.mygca.model.request.*
 import com.gca.mygca.model.response.*
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -21,7 +18,10 @@ interface HomeApiService {
     suspend fun getMedia(@Body commonRequestModel: CommonRequestModel): GalleryResponseModel
 
     @POST("ReadDeparture.php")
-    suspend fun getDeparture(): DepartureResponseModel
+    suspend fun getDeparture(@Body readDepartureRequestModel: ReadDepartureRequestModel): DepartureResponseModel
+
+    @POST("ReadAllDepartures.php")
+    suspend fun getAllDeparture(@Body commonRequestModel: CommonRequestModel): DepartureResponseModel
 
     @POST("ReadBranches.php")
     suspend fun getSchoolBranch(): SchoolBranchesResponseModel
@@ -44,7 +44,24 @@ interface HomeApiService {
     @POST("ReadStudentClass.php")
     suspend fun getStudentClass(@Body studentClassRequestModel: StudentClassRequestModel): MyApiResponse<StudentMediumResponseModel>
 
+    @POST("ReadStudentRbseClasses.php")
+    suspend fun getStudentRbseClass(@Body studentClassRequestModel: StudentClassRequestModel): MyApiResponse<StudentMediumResponseModel>
+
     @POST("ReadSchoolFees.php")
     suspend fun getSchoolFees(@Body commonRequestModel: CommonRequestModel): MyApiResponse<SchoolFeesResponseModel>
+
+    @POST("ReadAllFees.php")
+    suspend fun getAllSchoolFees(): MyApiResponse<SchoolFeesResponseModel>
+
+    @POST("ManageTransportRoutes.php")
+    suspend fun manageTransportRoutes(@Body addRequestModel: AddRequestModel): CommonResponseModel
+
+    @POST("ManageMedia.php")
+    suspend fun manageMedia(@Body addMediaRequestModel: AddMediaRequestModel): CommonResponseModel
+
+    @POST("ManageSlider.php")
+    suspend fun manageSlider(@Body addSliderRequestModel: AddSliderRequestModel): CommonResponseModel
+
+
 
 }

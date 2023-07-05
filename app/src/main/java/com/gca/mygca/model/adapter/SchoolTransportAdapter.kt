@@ -17,7 +17,8 @@ import javax.inject.Inject
 
 class SchoolTransportAdapter @Inject constructor():BaseListAdapter<Transport,ItemSchoolTransportBinding>(DiffCallback()){
 
-    var open:((id:String?)->Unit)? = null
+    var open:((id:String?,Transport?)->Unit)? = null
+    var options:((id:String?,Transport?)->Unit)? = null
     class DiffCallback: DiffUtil.ItemCallback<Transport>(){
         override fun areItemsTheSame(oldItem: Transport, newItem: Transport): Boolean {
             return oldItem == newItem
@@ -36,7 +37,11 @@ class SchoolTransportAdapter @Inject constructor():BaseListAdapter<Transport,Ite
     override fun bind(binding: ItemSchoolTransportBinding, item: Transport?) {
         binding.option.text = item?.title
         binding.option.setOnClickListener {
-            open?.invoke(item?.id)
+            open?.invoke(item?.id,item)
+        }
+        binding.option.setOnLongClickListener {
+            options?.invoke(item?.id,item)
+            return@setOnLongClickListener true
         }
     }
 

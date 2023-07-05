@@ -34,6 +34,7 @@ class MainActivity : BaseActivity() {
             }
 
         }
+        
     }
 
     fun onDestinationChange(destination: NavDestination){

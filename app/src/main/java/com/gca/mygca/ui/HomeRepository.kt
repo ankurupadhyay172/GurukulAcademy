@@ -1,11 +1,8 @@
 package com.gca.mygca.ui
 
 import com.gca.mygca.database.DatabaseManager
-import com.gca.mygca.model.request.DepartureRequestModel
 import com.gca.mygca.model.SliderResponseModel
-import com.gca.mygca.model.request.CommonRequestModel
-import com.gca.mygca.model.request.StudentClassRequestModel
-import com.gca.mygca.model.request.TransportFeesRequestModel
+import com.gca.mygca.model.request.*
 import com.gca.mygca.model.response.*
 import com.gca.mygca.retrofit.HomeApiService
 import kotlinx.coroutines.flow.Flow
@@ -29,8 +26,13 @@ class HomeRepository @Inject constructor(val homeApiService: HomeApiService,val 
         emit(response)
     }
 
-    suspend fun getDeparture(): Flow<DepartureResponseModel> = flow {
-        val response = homeApiService.getDeparture()
+    suspend fun getDeparture(readDepartureRequestModel: ReadDepartureRequestModel): Flow<DepartureResponseModel> = flow {
+        val response = homeApiService.getDeparture(readDepartureRequestModel)
+        emit(response)
+    }
+
+    suspend fun getAllDeparture(commonRequestModel: CommonRequestModel): Flow<DepartureResponseModel> = flow {
+        val response = homeApiService.getAllDeparture(commonRequestModel)
         emit(response)
     }
 
@@ -75,8 +77,33 @@ class HomeRepository @Inject constructor(val homeApiService: HomeApiService,val 
         emit(response)
     }
 
+    suspend fun getStudentRbseClass(studentClassRequestModel: StudentClassRequestModel): Flow<MyApiResponse<StudentMediumResponseModel>> = flow {
+        val response = homeApiService.getStudentRbseClass(studentClassRequestModel)
+        emit(response)
+    }
+
     suspend fun getSchoolFees(commonRequestModel: CommonRequestModel): Flow<MyApiResponse<SchoolFeesResponseModel>> = flow {
         val response = homeApiService.getSchoolFees(commonRequestModel)
+        emit(response)
+    }
+
+    suspend fun getAllSchoolFees(): Flow<MyApiResponse<SchoolFeesResponseModel>> = flow {
+        val response = homeApiService.getAllSchoolFees()
+        emit(response)
+    }
+
+    suspend fun manageTransportRoutes(addRequestModel: AddRequestModel): Flow<CommonResponseModel> = flow {
+        val response = homeApiService.manageTransportRoutes(addRequestModel)
+        emit(response)
+    }
+
+    suspend fun manageMedia(addMediaRequestModel: AddMediaRequestModel): Flow<CommonResponseModel> = flow {
+        val response = homeApiService.manageMedia(addMediaRequestModel)
+        emit(response)
+    }
+
+    suspend fun manageSlider(addSliderRequestModel: AddSliderRequestModel): Flow<CommonResponseModel> = flow {
+        val response = homeApiService.manageSlider(addSliderRequestModel)
         emit(response)
     }
 }

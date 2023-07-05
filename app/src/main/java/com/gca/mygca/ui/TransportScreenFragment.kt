@@ -1,5 +1,6 @@
 package com.gca.mygca.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -33,10 +34,21 @@ class TransportScreenFragment :BaseFragment<FragmentTransportFeesBinding,HomeVie
                 }
         }
 
-        adapter.open = {
+        //getViewDataBinding().fabAdd.visibility = View.VISIBLE
+        adapter.open = {it,model->
             findNavController().navigate(TransportScreenFragmentDirections.actionTransportScreenFragmentToTransportRoutesFragment(it))
         }
-
+        adapter.options = {it,model->
+            AlertDialog.Builder(requireContext()).setTitle(R.string.options)
+                .setItems(R.array.options) { dialog, which ->
+                    if (which==0) {
+                        showToast("click on edit ")
+                    }
+                    if (which==1){
+                        showToast("click on delete ")
+                    }
+                }.show()
+        }
 
     }
     override fun getLayoutId() = R.layout.fragment_transport_fees

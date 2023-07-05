@@ -33,6 +33,9 @@ class DepartureMenuFragment :BaseFragment<DepartureMenuFragmentBinding,HomeViewM
         getViewDataBinding().add.setOnClickListener {
             findNavController().navigate(DepartureMenuFragmentDirections.actionDepartureMenuFragmentToEarlyDepartureFormFragment())
         }
+        getViewDataBinding().viewAll.setOnClickListener {
+            findNavController().navigate(DepartureMenuFragmentDirections.actionDepartureMenuFragmentToViewDepartureHistoryFragment(1))
+        }
     }
     override fun getLayoutId() = R.layout.departure_menu_fragment
     override fun getBindingVariable() = BR.model

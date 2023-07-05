@@ -14,7 +14,7 @@ import com.gca.mygca.model.response.MediaModel
 import javax.inject.Inject
 
 class SchoolBranchesAdapter @Inject constructor():BaseListAdapter<Branches,ItemBranchesBinding>(DiffCallback()){
-    var open:((id:String?)->Unit)? = null
+    var open:((id:Branches?)->Unit)? = null
     class DiffCallback: DiffUtil.ItemCallback<Branches>(){
         override fun areItemsTheSame(oldItem: Branches, newItem: Branches): Boolean {
             return oldItem == newItem
@@ -35,7 +35,8 @@ class SchoolBranchesAdapter @Inject constructor():BaseListAdapter<Branches,ItemB
         option.text = item?.branch_name
         //option.setBackgroundColor(Color.parseColor(item?.color))
         option.setOnClickListener {
-            open?.invoke(item?.id)
+            open?.invoke(item)
+
         }
     }
 

@@ -2,6 +2,7 @@ package com.gca.mygca.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -23,7 +24,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class StudentClassesFragment :BaseFragment<FragmentTransportFeesBinding,HomeViewModel>(){
-    val homeViewModel: HomeViewModel by viewModels()
+    val homeViewModel: HomeViewModel by activityViewModels()
     val args: StudentClassesFragmentArgs by navArgs()
     @Inject
     lateinit var adapter: StudentMediumAdapter
@@ -32,14 +33,28 @@ class StudentClassesFragment :BaseFragment<FragmentTransportFeesBinding,HomeView
         getViewDataBinding().recyclerView.adapter = adapter
             val loader = Loader.getLoader(requireActivity())
             loader.show()
-            homeViewModel.getStudentClass(StudentClassRequestModel(args.boardId,args.mediumId) ).observe(viewLifecycleOwner){
-                it.getErrorIfExists()?.let {
-                    loader.cancel()
+
+            if (args.mediumId!="0"){
+                homeViewModel.getStudentRbseClass(StudentClassRequestModel(args.boardId,args.mediumId)).observe(viewLifecycleOwner){
+                    it.getErrorIfExists()?.let {
+                        loader.cancel()
+                    }
+                    it.getValueOrNull().let {
+                        loader.cancel()
+                        adapter.submitList(it?.result)
+                    }
                 }
-                it.getValueOrNull().let {
-                    loader.cancel()
-                    adapter.submitList(it?.result)
-                }
+            }else{
+                homeViewModel.getStudentClass(StudentClassRequestModel(args.boardId,args.mediumId,homeViewModel.selectedBranchModel?.from,homeViewModel.selectedBranchModel?.to)).observe(viewLifecycleOwner){
+                    it.getErrorIfExists()?.let {
+                        loader.cancel()
+                    }
+                    it.getValueOrNull().let {
+                        loader.cancel()
+                        adapter.submitList(it?.result)
+                    }
+            }
+
         }
 
         adapter.fees ={id,benefit->

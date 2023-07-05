@@ -4,6 +4,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -42,7 +43,7 @@ android {
 
     productFlavors{
         staging{
-            applicationId "com.staging.gca.mygca"
+            applicationId "com.gca.mygca"
             dimension "default"
             buildConfigField 'String', BASE_URL , STAGING_API_URL
         }
@@ -95,6 +96,16 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     kapt("androidx.room:room-compiler:2.4.2")
     implementation 'androidx.room:room-ktx:2.4.2'
+
+    implementation platform('com.google.firebase:firebase-bom:31.4.0')
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    implementation("com.android.volley:volley:1.2.1")
+
+    implementation 'androidx.paging:paging-runtime:3.1.1'
 }
 kapt{
     correctErrorTypes = true

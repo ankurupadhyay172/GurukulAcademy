@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@color/black_bg"
+        android:background="@color/white_50"
         android:orientation="vertical"
         android:paddingEnd="@dimen/_20sdp"
         android:paddingStart="@dimen/_20sdp"
@@ -49,10 +49,25 @@
                 android:textSize="@dimen/_20sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add"
-                android:text="View Departure"
+                android:text="View Departure DateWise"
                 android:layout_marginTop="@dimen/_16sdp"
                 />
 
+
+            <TextView
+                android:id="@+id/viewAll"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:gravity="center"
+                android:background="@drawable/profile_bg_green"
+                android:fontFamily="@font/avenir_heavy"
+                android:textColor="@color/bluePrimary"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                android:text="View All Departures"
+                android:layout_marginTop="@dimen/_16sdp"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

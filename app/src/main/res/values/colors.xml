@@ -28,4 +28,6 @@
     <color name="shape_green">#009688</color>
     <color name="transparent">#00000000</color>
     <color name="white_50">#80FFFFFF</color>
+    <color name="red">#E72C1F</color>
+    <color name="filter_back">#E4E4E4</color>
 </resources>

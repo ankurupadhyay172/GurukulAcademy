@@ -15,7 +15,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -232,6 +233,37 @@
                         android:layout_marginTop="10dp"
                         android:textSize="@dimen/_11sdp"
                         android:text="@string/transport_fees"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/slider_layout"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardSlider"
+                        app:cardCornerRadius="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_60sdp">
+
+                        <ImageView
+                            android:id="@+id/ivSlider"
+                            android:src="@drawable/slideshow"
+                            android:layout_gravity="center"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_50sdp" />
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/tvSlider"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/_11sdp"
+                        android:text="Image Slider"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 

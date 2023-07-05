@@ -30,7 +30,7 @@ class VideoPlayerFragment :BaseFragment<FragmentVideoPlayerBinding,HomeViewModel
         val exoPlayer = ExoPlayer.Builder(requireContext()).build()
         exoPlayer.playWhenReady = true
         getViewDataBinding().exoPlayer.player = exoPlayer
-        val mediaItem = MediaItem.fromUri(args.url)
+        val mediaItem = MediaItem.fromUri(args.url!!)
         exoPlayer.setMediaItem(mediaItem)
         exoPlayer.seekTo(0)
         exoPlayer.playWhenReady = true

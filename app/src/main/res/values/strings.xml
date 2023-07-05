@@ -5,4 +5,14 @@
     <string name="gallery_video">Gallery Video</string>
     <string name="easy_departure">Easy Departure</string>
     <string name="transport_fees">Transport Fees</string>
+    <string name="options">Select an action</string>
+
+    <string-array name="option_del">
+        <item >Delete </item>
+    </string-array>
+
+    <string-array name="options">
+        <item >Edit</item>
+        <item >Delete </item>
+    </string-array>
 </resources>

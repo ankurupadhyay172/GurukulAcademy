@@ -9,12 +9,15 @@ import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.gca.mygca.R
 import com.gca.mygca.model.response.MediaModel
+import com.gca.mygca.model.response.Transport
 import com.gca.mygca.utils.MediaType
 import com.gca.mygca.utils.setImage
 
 
 class ImageAdapter(val list: List<MediaModel>,val context: Context):BaseAdapter() {
 
+    var options:((id:String?, MediaModel?)->Unit)? = null
+    var open:((id:MediaModel?)->Unit)? = null
     var layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     override fun getCount(): Int {
@@ -41,7 +44,13 @@ class ImageAdapter(val list: List<MediaModel>,val context: Context):BaseAdapter(
             playIcon?.isVisible = true
         }
         image?.setImage(list[position].path)
-
+        image?.setOnLongClickListener {
+            options?.invoke(list[position].id,list[position])
+            return@setOnLongClickListener true
+        }
+        image?.setOnClickListener {
+            open?.invoke(list[position])
+        }
         return view!!
     }
 }

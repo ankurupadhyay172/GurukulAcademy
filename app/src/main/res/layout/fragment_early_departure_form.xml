@@ -17,7 +17,10 @@
         android:focusableInTouchMode="true"
         android:orientation="vertical"
         tools:ignore="MissingPrefix">
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <LinearLayout
             android:id="@+id/fragProfileSetting_actionbar"
             android:layout_width="match_parent"
@@ -262,6 +265,28 @@
                     app:hintTextColor="@color/white">
 
                     <EditText
+                        android:id="@+id/edtVehicleNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:backgroundTint="@color/gray"
+                        android:inputType="textCapWords"
+                        android:hint="Vehicle No."
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:theme="@style/text_white"
+                        app:textHint="Name" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
+                    app:boxStrokeColor="@color/black_bg"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="@color/white">
+
+                    <EditText
                         android:id="@+id/edtDate"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_60sdp"
@@ -308,10 +333,52 @@
                     android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_20sdp"
-                    android:layout_marginBottom="@dimen/_300sdp"
                     android:background="@drawable/shape_blue_radius_8"
                     android:gravity="center"
                     android:text="Save"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutOtp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/white"
+                    app:boxStrokeColor="@color/black_bg"
+                    app:boxStrokeWidth="0dp"
+                    app:hintTextColor="@color/white">
+
+                    <EditText
+                        android:id="@+id/edtOtp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:backgroundTint="@color/gray"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:hint="OTP"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        android:theme="@style/text_white"
+                        app:inputType="text"
+                        app:textHint="Name" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/submitOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/shape_blue_radius_8"
+                    android:gravity="center"
+                    android:text="Submit Otp"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 

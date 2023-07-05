@@ -39,9 +39,9 @@ class StudentMediumFragment :BaseFragment<FragmentTransportFeesBinding,HomeViewM
                 }
         }
 
-        adapter.open = {
+        adapter.fees = {id,benefit->
 
-                findNavController().navigate(StudentMediumFragmentDirections.actionStudentMediumFragmentToStudentClassesFragment(args.id,it))
+                findNavController().navigate(StudentMediumFragmentDirections.actionStudentMediumFragmentToStudentClassesFragment(args.id,id))
         }
 
 

@@ -46,7 +46,8 @@ class FrontScreenFragment :BaseFragment<FragmentFrontScreenBinding,HomeViewModel
             }
         }
         adapter.open = {
-            homeViewModel.selectedBranch = it
+            homeViewModel.selectedBranch = it?.id
+            homeViewModel.selectedBranchModel = it
             findNavController().navigate(FrontScreenFragmentDirections.actionFrontScreenFragmentToHomeFragment())
         }
 

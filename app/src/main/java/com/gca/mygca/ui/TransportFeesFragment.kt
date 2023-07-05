@@ -32,9 +32,18 @@ class TransportFeesFragment :BaseFragment<FragmentShowTransportFeesBinding,HomeV
         super.onViewCreated(view, savedInstanceState)
         getViewDataBinding().recyclerView.adapter = adapter
 
+        getViewDataBinding().paidName.text = args.vehicleNo
             homeViewModel.getTransportFees(TransportFeesRequestModel(args.id,args.routeId) ).observe(viewLifecycleOwner){
                 it.getValueOrNull().let {
                     adapter.submitList(it?.result)
+                    if (it?.status==1){
+                        val list = it.result.map { it.fees.toInt() }
+                        var total =0
+                        for (i in list){
+                            total +=i
+                        }
+                        getViewDataBinding().totalFees.text = "REGISTRATION FEES = ₹500\nTotal Fees = ₹$total"
+                    }
                 }
         }
 
